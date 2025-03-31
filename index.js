@@ -4,6 +4,7 @@ Vue.createApp({
     data() {
         return {
             poems: [],
+            
             error: null,
             author: "",
         }
@@ -30,6 +31,20 @@ Vue.createApp({
                 this.error = "No poems found for this author.";  // Error message
             }
         },
+    
+        async sortPoems() {
+            if (this.poems.length === 0) {
+                this.error = "No poems available to sort.";
+                return;
+            }
+            this.poems.sort((a, b) => a.title.localeCompare(b.title));  // Sort poems by title
+            this.error = null;
+        },
+        
+       
+
+       
+        
         cleanList() {
             this.poems = [];  // Clear the poem list
             this.error = null;

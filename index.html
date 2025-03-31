@@ -22,6 +22,7 @@
         <button class="btn btn-primary" v-on:click="cleanList">Clean the list</button>
         <input v-model="author" placeholder="Write an author name" type="search" class="form-control" style="width: 200px; display: inline-block; margin-right: 5px;">
         <button class="btn btn-primary" v-on:click="getPoemsByAuthor">Find Poems</button>
+        <button class="btn btn-primary" v-on:click="sortPoems">Sort</button>
 
         <div v-if="error" style="color: red">{{ error }}</div>
 
